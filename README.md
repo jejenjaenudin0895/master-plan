@@ -2,6 +2,9 @@
 
 A new Flutter project.
 
+NAMA  : JEJEN JAENUDIN
+NIM   : 1125170031
+
 ## Getting Started
 
 ## **Tugas Praktikum 1: Dasar State dengan Model-View**
@@ -10,63 +13,63 @@ A new Flutter project.
 dari project yang dibuat saya mencoba untuk memperaktekan bagaimana membuat plan yang sederhana menggunakan beberapa widget yang di antaranya :
 
 **1. PlanScreen Widget:**
-=> PlanScreen adalah StatefulWidget, yang berarti ia memiliki status yang dapat berubah. Widget ini mengelola   
+- PlanScreen adalah StatefulWidget, yang berarti ia memiliki status yang dapat berubah. Widget ini mengelola   
    sebuah objek Plan yang berisi daftar tugas yang dapat diubah.
-=> Di dalam kelas PlanScreen, kita mendeklarasikan state _PlanScreenState yang akan menangani logika dan UI 
+- Di dalam kelas PlanScreen, kita mendeklarasikan state _PlanScreenState yang akan menangani logika dan UI 
    dari layar tersebut.
 
 **2. _PlanScreenState Class:**
 Kelas ini mengontrol tampilan dan interaksi di layar PlanScreen:
 
-=> plan: Objek Plan yang menyimpan informasi rencana yang berisi nama rencana dan daftar tugas. Diinisialisasi 
+- plan: Objek Plan yang menyimpan informasi rencana yang berisi nama rencana dan daftar tugas. Diinisialisasi 
    dengan const Plan(), yang berarti rencana ini kosong pada awalnya.
-=> scrollController: Sebuah objek ScrollController yang digunakan untuk mengatur perilaku scroll pada tampilan 
+- scrollController: Sebuah objek ScrollController yang digunakan untuk mengatur perilaku scroll pada tampilan 
    daftar tugas.
 
 **3. initState Method:**
 Method ini dipanggil sekali ketika widget pertama kali dimasukkan ke dalam pohon widget.
 
-=> scrollController diinisialisasi di sini, dan listener ditambahkan untuk menangani fokus keyboard. Ketika 
+- scrollController diinisialisasi di sini, dan listener ditambahkan untuk menangani fokus keyboard. Ketika 
    pengguna menggulir, fokus keyboard akan dipindahkan menggunakan requestFocus(FocusNode()), yang efektif menyembunyikan keyboard jika pengguna menggulir.
 
 **4. build Method:**
 Method ini membangun UI dari PlanScreen:
 
-=> AppBar: Menampilkan judul "Master Plan JEJEN JAENDUIN".
-=> body: Menampilkan daftar tugas dengan menggunakan metode _buildList().
-=> floatingActionButton: Sebuah tombol berbentuk bulat dengan ikon plus (tambah), yang ketika ditekan akan 
+- AppBar: Menampilkan judul "Master Plan JEJEN JAENDUIN".
+- body: Menampilkan daftar tugas dengan menggunakan metode _buildList().
+- floatingActionButton: Sebuah tombol berbentuk bulat dengan ikon plus (tambah), yang ketika ditekan akan 
    menambahkan tugas baru ke dalam rencana dengan memanggil _buildAddTaskButton().
 
 **5. _buildAddTaskButton Method:**
-=> Method ini membangun tombol floating action button:
+- Method ini membangun tombol floating action button:
 
-=> Ketika tombol ini ditekan, sebuah tugas baru akan ditambahkan ke daftar tasks di objek plan.
+- Ketika tombol ini ditekan, sebuah tugas baru akan ditambahkan ke daftar tasks di objek plan.
    Menggunakan setState() untuk memperbarui status dan merender ulang tampilan. Daftar tugas diperbarui dengan menambah tugas kosong (const Task()).
 
 **6. _buildList Method:**
 Method ini membangun daftar tugas menggunakan ListView.builder:
 
-=> itemCount: Jumlah item yang akan ditampilkan adalah panjang dari plan.tasks (jumlah tugas).
-=> itemBuilder: Untuk setiap tugas, kita membangun ListTile yang berisi checkbox dan TextFormField untuk 
+- itemCount: Jumlah item yang akan ditampilkan adalah panjang dari plan.tasks (jumlah tugas).
+- itemBuilder: Untuk setiap tugas, kita membangun ListTile yang berisi checkbox dan TextFormField untuk 
    mengedit deskripsi tugas.
-=> controller: scrollController digunakan untuk mengontrol perilaku scroll.
-=> keyboardDismissBehavior: Menentukan bagaimana keyboard berperilaku saat pengguna menggulir. Pada platform 
+- controller: scrollController digunakan untuk mengontrol perilaku scroll.
+- keyboardDismissBehavior: Menentukan bagaimana keyboard berperilaku saat pengguna menggulir. Pada platform 
    iOS, keyboard akan hilang jika pengguna menggulir, sedangkan pada platform lain, tidak ada tindakan otomatis saat menggulir.
 
 **7. _buildTaskTile Method:**
 Method ini membangun setiap tugas sebagai ListTile:
 
-=> Checkbox: Menampilkan status dari task.complete (apakah tugas sudah selesai atau belum). Ketika diubah 
+- Checkbox: Menampilkan status dari task.complete (apakah tugas sudah selesai atau belum). Ketika diubah 
    (misalnya, dicentang atau tidak dicentang), maka status tugas akan diperbarui.
-=> TextFormField: Menampilkan dan memungkinkan pengeditan deskripsi tugas. Ketika pengguna mengetik sesuatu,   
+- TextFormField: Menampilkan dan memungkinkan pengeditan deskripsi tugas. Ketika pengguna mengetik sesuatu,   
    setState() dipanggil untuk memperbarui tugas tersebut.
-=> Ketika ada perubahan pada tugas (baik status checkbox atau deskripsi), setState() digunakan untuk membuat   
+- Ketika ada perubahan pada tugas (baik status checkbox atau deskripsi), setState() digunakan untuk membuat   
    salinan baru dari plan.tasks dan memperbarui item yang sesuai dalam daftar.
 
 **8. dispose Method:**
 Method ini dipanggil ketika widget dibuang atau dihancurkan.
 
-=> Di sini, scrollController.dispose() dipanggil untuk melepaskan sumber daya yang digunakan oleh scrollController, seperti memori dan listener yang ditambahkan.
+- Di sini, scrollController.dispose() dipanggil untuk melepaskan sumber daya yang digunakan oleh scrollController, seperti memori dan listener yang ditambahkan.
 
 ## **Ringkasan Proses:**
 1. Menambahkan Tugas: Ketika tombol "+" di bagian bawah layar ditekan, tugas baru ditambahkan ke dalam          
@@ -88,9 +91,9 @@ Optimisasi Performansi: Jika ada banyak tugas, pertimbangkan menggunakan ListVie
 Export di Dart adalah sebuah fitur yang memungkinkan Anda untuk mengimpor file Dart lainnya secara lebih 
 ringkas dan efisien. Dengan export, Anda bisa menyediakan API atau interface tertentu yang berisi semua file yang diperlukan dalam satu tempat, sehingga kode yang mengimpor hanya perlu mengakses satu file saja, alih-alih mengimpor berbagai file secara terpisah.
 
-=> export digunakan untuk mengekspor file atau bagian tertentu dari file agar bisa digunakan oleh file lain.
+- export digunakan untuk mengekspor file atau bagian tertentu dari file agar bisa digunakan oleh file lain.
 
-=> Biasanya, export digunakan untuk mempermudah dan merapikan proses impor. Sebagai contoh, jika Anda memiliki beberapa model, Anda bisa membuat satu file yang mengekspor semua model tersebut agar hanya dengan satu kali impor, Anda bisa mengakses semuanya.
+- Biasanya, export digunakan untuk mempermudah dan merapikan proses impor. Sebagai contoh, jika Anda memiliki beberapa model, Anda bisa membuat satu file yang mengekspor semua model tersebut agar hanya dengan satu kali impor, Anda bisa mengakses semuanya.
 
 **Keuntungan Menggunakan export:**
 
@@ -175,9 +178,9 @@ Listenable, seperti ChangeNotifier. Dengan InheritedNotifier, kita dapat membagi
 Keuntungan Menggunakan InheritedNotifier:
 1. Penggabungan InheritedWidget dan ChangeNotifier:
 
-=>  Dengan InheritedNotifier, kita tidak perlu mengelola pemberitahuan perubahan secara manual seperti yang kita lakukan dengan InheritedWidget biasa.
+-  Dengan InheritedNotifier, kita tidak perlu mengelola pemberitahuan perubahan secara manual seperti yang kita lakukan dengan InheritedWidget biasa.
 
-=> Cukup dengan memberi tahu pendengar menggunakan notifyListeners() pada ChangeNotifier, dan InheritedNotifier 
+- Cukup dengan memberi tahu pendengar menggunakan notifyListeners() pada ChangeNotifier, dan InheritedNotifier 
    akan mengatur pemberitahuan ulang secara otomatis.
 
 2. Pembaruan UI yang Efisien:
@@ -195,28 +198,28 @@ Daripada membuat InheritedWidget sendiri dan menulis kode untuk mengelola pember
 kali ini saya memperaktekan praktekum ke 3 yaitu membuat layar screen yang dipergunakan untuk menambahkan dan mengelola rencana mereka dalam bentuk daftar rencana yang dapat dilihat dan dipilih. Secara lebih rinci, tujuan dalam praktek ke tiga ini adalah sebagai berikut :
 
 1. Membuat Rencana Baru (Plan)
-   => Tujuan: Mengizinkan pengguna untuk menambahkan rencana baru ke dalam daftar rencana mereka.
+   - Tujuan: Mengizinkan pengguna untuk menambahkan rencana baru ke dalam daftar rencana mereka.
 
-   => Di layar ini, pengguna dapat memasukkan nama rencana yang baru menggunakan TextField. Setelah itu,   
+   - Di layar ini, pengguna dapat memasukkan nama rencana yang baru menggunakan TextField. Setelah itu,   
       pengguna bisa menekan tombol "enter" atau menyelesaikan editannya, yang akan memicu metode addPlan() untuk menambahkan rencana baru ke dalam daftar.
 
 2. Menggunakan ValueNotifier untuk State Management
-   =>Tujuan: Mengelola dan memantau perubahan data rencana (daftar rencana) secara real-time dalam aplikasi.
+   -Tujuan: Mengelola dan memantau perubahan data rencana (daftar rencana) secara real-time dalam aplikasi.
 
-   => ValueNotifier<List<Plan>> digunakan untuk menyimpan daftar rencana (List<Plan>) yang dapat diperbarui 
+   - ValueNotifier<List<Plan>> digunakan untuk menyimpan daftar rencana (List<Plan>) yang dapat diperbarui 
       secara langsung dan memicu pembaruan pada tampilan (UI). Ketika rencana baru ditambahkan, ValueNotifier akan diberi nilai baru, dan UI akan diperbarui menggunakan setState(), memungkinkan pengguna melihat daftar rencana yang terbaru.
 
 3. Menampilkan Daftar Rencana
 
-   => Tujuan: Menampilkan semua rencana yang telah dibuat oleh pengguna.
+   - Tujuan: Menampilkan semua rencana yang telah dibuat oleh pengguna.
 
-   => Menggunakan ListView.builder, daftar rencana yang ada akan ditampilkan secara dinamis. Setiap item dalam  
+   - Menggunakan ListView.builder, daftar rencana yang ada akan ditampilkan secara dinamis. Setiap item dalam  
       daftar (ListTile) menunjukkan nama rencana dan status dari rencana tersebut (melalui completenessMessage).
       Jika tidak ada rencana yang ada (daftar kosong), layar akan menampilkan pesan yang mengindikasikan bahwa belum ada rencana yang dibuat.
 
 4. Navigasi ke Layar Detail Rencana
-   =>Tujuan: Mengizinkan pengguna untuk melihat detail dari rencana yang telah dipilih.
-   =>Ketika pengguna mengetuk salah satu item di daftar rencana, aplikasi akan menavigasi ke layar lain, yaitu 
+   -Tujuan: Mengizinkan pengguna untuk melihat detail dari rencana yang telah dipilih.
+   -Ketika pengguna mengetuk salah satu item di daftar rencana, aplikasi akan menavigasi ke layar lain, yaitu 
      PlanScreen, untuk menampilkan detail rencana yang dipilih. Di layar ini, pengguna bisa melihat informasi lebih lanjut tentang rencana yang telah dibuat.
 
 5. UI yang Interaktif dan Responsif
@@ -235,36 +238,36 @@ Diagram ini menggambarkan struktur (hierarki) dari dua tampilan (screens) dalam 
 
 # Bagian Kiri: PlanCreatorScreen
 
-=> MaterialApp: Komponen utama yang membutuhkan material design
+- MaterialApp: Komponen utama yang membutuhkan material design
 
-=> PlanProvider: Pengatur pengadaan data untuk rencana
+- PlanProvider: Pengatur pengadaan data untuk rencana
 
-=> PlanCreatorScreen: Layar untuk membuat rencana baru
+- PlanCreatorScreen: Layar untuk membuat rencana baru
 
-=> Column: Widget yang mengatur komponen secara vertikal
-    => TextField: Input teks untuk rencana
+- Column: Widget yang mengatur komponen secara vertikal
+    - TextField: Input teks untuk rencana
 
-    => Expanded: Widget yang memperluas ruang untuk anak widget
+    - Expanded: Widget yang memperluas ruang untuk anak widget
 
-         => ListView: Menampilkan daftar item yang dapat discroll
+         - ListView: Menampilkan daftar item yang dapat discroll
 
 ## **Bagian Kanan: PlanScreen**
 
-=> MaterialApp: Sama dengan sebelah kiri
+- MaterialApp: Sama dengan sebelah kiri
 
-=> PlanScreen: Layar yang menunjukkan rencana yang sudah dibuat
+- PlanScreen: Layar yang menunjukkan rencana yang sudah dibuat
 
-=> Scaffold: Struktur dasar untuk layout halaman
+- Scaffold: Struktur dasar untuk layout halaman
 
-=> Column: Digunakan untuk menempatkan widget secara vertikal
+- Column: Digunakan untuk menempatkan widget secara vertikal
 
-    => Expanded: Memungkinkan widget di dalamnya untuk mengisi ruang yang tersedia.
+    - Expanded: Memungkinkan widget di dalamnya untuk mengisi ruang yang tersedia.
 
-    => SafeArea: Widget untuk menghindari area yang terhalang (seperti notch di ponsel).
+    - SafeArea: Widget untuk menghindari area yang terhalang (seperti notch di ponsel).
 
-    => ListView: Menampilkan daftar item yang dapat discroll
+    - ListView: Menampilkan daftar item yang dapat discroll
 
-    => Text: Menampilkan teks.
+    - Text: Menampilkan teks.
 
 ## Arah Navigasi
 
