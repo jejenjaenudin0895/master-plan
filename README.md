@@ -14,17 +14,17 @@ dari project yang dibuat saya mencoba untuk memperaktekan bagaimana membuat plan
 
 **1. PlanScreen Widget:**
 - PlanScreen adalah StatefulWidget, yang berarti ia memiliki status yang dapat berubah. Widget ini mengelola   
-   sebuah objek Plan yang berisi daftar tugas yang dapat diubah.
+  sebuah objek Plan yang berisi daftar tugas yang dapat diubah.
 - Di dalam kelas PlanScreen, kita mendeklarasikan state _PlanScreenState yang akan menangani logika dan UI 
-   dari layar tersebut.
+  dari layar tersebut.
 
 **2. _PlanScreenState Class:**
 Kelas ini mengontrol tampilan dan interaksi di layar PlanScreen:
 
 - plan: Objek Plan yang menyimpan informasi rencana yang berisi nama rencana dan daftar tugas. Diinisialisasi 
-   dengan const Plan(), yang berarti rencana ini kosong pada awalnya.
+  dengan const Plan(), yang berarti rencana ini kosong pada awalnya.
 - scrollController: Sebuah objek ScrollController yang digunakan untuk mengatur perilaku scroll pada tampilan 
-   daftar tugas.
+  daftar tugas.
 
 **3. initState Method:**
 Method ini dipanggil sekali ketika widget pertama kali dimasukkan ke dalam pohon widget.
@@ -97,20 +97,20 @@ ringkas dan efisien. Dengan export, Anda bisa menyediakan API atau interface ter
 
 **Keuntungan Menggunakan export:**
 
-1.Mempermudah Impor: Daripada mengimpor banyak file satu per satu, Anda hanya perlu mengimpor satu file, 
-  seperti data_layer.dart, dan semua model yang diekspor akan tersedia.
+1. Mempermudah Impor: Daripada mengimpor banyak file satu per satu, Anda hanya perlu mengimpor satu file, 
+   seperti data_layer.dart, dan semua model yang diekspor akan tersedia.
 
-2.Pengorganisasian Kode: Jika aplikasi Anda besar dan memiliki banyak model, export membantu Anda mengorganisir 
-  dan memisahkan kode dengan lebih baik.
+2. Pengorganisasian Kode: Jika aplikasi Anda besar dan memiliki banyak model, export membantu Anda  
+   mengorganisir dan memisahkan kode dengan lebih baik.
 
-3.Modularisasi: Dengan menggunakan export, Anda memecah aplikasi menjadi modul-modul kecil dan terorganisir. 
-  File ekspor bertindak sebagai "pintu gerbang" yang mengontrol apa saja yang bisa diakses di luar modul.
+3. Modularisasi: Dengan menggunakan export, Anda memecah aplikasi menjadi modul-modul kecil dan terorganisir. 
+   File ekspor bertindak sebagai "pintu gerbang" yang mengontrol apa saja yang bisa diakses di luar modul.
 
-4.Kemudahan Pemeliharaan: Saat Anda ingin menambah atau mengubah sesuatu dalam kumpulan model, Anda cukup 
-  mengedit file data_layer.dart, tanpa perlu memperbarui setiap file yang mengimpor model tersebut.
+4. Kemudahan Pemeliharaan: Saat Anda ingin menambah atau mengubah sesuatu dalam kumpulan model, Anda cukup 
+   mengedit file data_layer.dart, tanpa perlu memperbarui setiap file yang mengimpor model tersebut.
 
 **NOTE**
-export digunakan untuk mengekspor file atau bagian-bagian dari file agar bisa digunakan oleh file lain.
+Export digunakan untuk mengekspor file atau bagian-bagian dari file agar bisa digunakan oleh file lain.
 Dengan menggunakan export, Anda bisa merangkum banyak ekspor ke dalam satu file, yang mempermudah proses impor dan menjaga kode tetap bersih dan terorganisir.
 
 ## **Mengapa perlu variabel plan di langkah 6 pada praktikum tersebut? Mengapa dibuat konstanta ?**
@@ -120,17 +120,17 @@ sepanjang siklus hidup aplikasi. Dalam kode yang Anda berikan, variabel Plan pla
 
 **Alasan Mengapa Perlu Variabel:**
 
-1.Menyimpan Data dan Status: Variabel digunakan untuk menyimpan data yang digunakan di dalam aplikasi, seperti 
-  Plan plan yang berisi objek dari kelas Plan. Ini memungkinkan Anda untuk mengelola dan memodifikasi data sesuai kebutuhan selama siklus hidup widget tersebut
+1. Menyimpan Data dan Status: Variabel digunakan untuk menyimpan data yang digunakan di dalam aplikasi, seperti 
+   Plan plan yang berisi objek dari kelas Plan. Ini memungkinkan Anda untuk mengelola dan memodifikasi data sesuai kebutuhan selama siklus hidup widget tersebut
 
-2.Menjaga Status di StatefulWidget: Di dalam widget dengan StatefulWidget seperti PlanScreen, variabel plan   
-  membantu menjaga dan memodifikasi status widget. Karena StatefulWidget memiliki dua bagian: State dan Widget, variabel tersebut memungkinkan State untuk menyimpan informasi atau data yang akan digunakan untuk membangun UI.
+2. Menjaga Status di StatefulWidget: Di dalam widget dengan StatefulWidget seperti PlanScreen, variabel plan   
+   membantu menjaga dan memodifikasi status widget. Karena StatefulWidget memiliki dua bagian: State dan Widget, variabel tersebut memungkinkan State untuk menyimpan informasi atau data yang akan digunakan untuk membangun UI.
 
-3.Menyimpan Nilai yang Dapat Berubah: Jika Anda ingin nilai tersebut berubah berdasarkan interaksi pengguna 
-  atau data dinamis lainnya, Anda memerlukan variabel untuk menyimpan perubahan tersebut. Sebagai contoh, jika Plan memiliki data yang berubah berdasarkan input atau aksi pengguna, variabel ini memungkinkan Anda untuk menyimpan dan mengelola perubahan tersebut.
+3. Menyimpan Nilai yang Dapat Berubah: Jika Anda ingin nilai tersebut berubah berdasarkan interaksi pengguna 
+   atau data dinamis lainnya, Anda memerlukan variabel untuk menyimpan perubahan tersebut. Sebagai contoh, jika Plan memiliki data yang berubah berdasarkan input atau aksi pengguna, variabel ini memungkinkan Anda untuk menyimpan dan mengelola perubahan tersebut.
 
-4.Menghindari Rebuild Berulang: Dalam StatefulWidget, variabel seperti Plan plan memungkinkan Anda untuk 
-  memodifikasi data atau status aplikasi tanpa memerlukan pembuatan ulang widget dari awal. Variabel tersebut membantu mempertahankan status saat UI diperbarui.
+4. Menghindari Rebuild Berulang: Dalam StatefulWidget, variabel seperti Plan plan memungkinkan Anda untuk 
+   memodifikasi data atau status aplikasi tanpa memerlukan pembuatan ulang widget dari awal. Variabel tersebut membantu mempertahankan status saat UI diperbarui.
 
   ## **Apa kegunaan method pada Langkah 11 dan 13 dalam lifecyle state ?**
 
@@ -178,10 +178,11 @@ Listenable, seperti ChangeNotifier. Dengan InheritedNotifier, kita dapat membagi
 Keuntungan Menggunakan InheritedNotifier:
 1. Penggabungan InheritedWidget dan ChangeNotifier:
 
--  Dengan InheritedNotifier, kita tidak perlu mengelola pemberitahuan perubahan secara manual seperti yang kita lakukan dengan InheritedWidget biasa.
+-  Dengan InheritedNotifier, kita tidak perlu mengelola pemberitahuan perubahan secara manual seperti yang kita 
+   lakukan dengan InheritedWidget biasa.
 
 - Cukup dengan memberi tahu pendengar menggunakan notifyListeners() pada ChangeNotifier, dan InheritedNotifier 
-   akan mengatur pemberitahuan ulang secara otomatis.
+  akan mengatur pemberitahuan ulang secara otomatis.
 
 2. Pembaruan UI yang Efisien:
 
@@ -207,7 +208,7 @@ kali ini saya memperaktekan praktekum ke 3 yaitu membuat layar screen yang diper
    -Tujuan: Mengelola dan memantau perubahan data rencana (daftar rencana) secara real-time dalam aplikasi.
 
    - ValueNotifier<List<Plan>> digunakan untuk menyimpan daftar rencana (List<Plan>) yang dapat diperbarui 
-      secara langsung dan memicu pembaruan pada tampilan (UI). Ketika rencana baru ditambahkan, ValueNotifier akan diberi nilai baru, dan UI akan diperbarui menggunakan setState(), memungkinkan pengguna melihat daftar rencana yang terbaru.
+     secara langsung dan memicu pembaruan pada tampilan (UI). Ketika rencana baru ditambahkan, ValueNotifier akan diberi nilai baru, dan UI akan diperbarui menggunakan setState(), memungkinkan pengguna melihat daftar rencana yang terbaru.
 
 3. Menampilkan Daftar Rencana
 
@@ -220,7 +221,7 @@ kali ini saya memperaktekan praktekum ke 3 yaitu membuat layar screen yang diper
 4. Navigasi ke Layar Detail Rencana
    -Tujuan: Mengizinkan pengguna untuk melihat detail dari rencana yang telah dipilih.
    -Ketika pengguna mengetuk salah satu item di daftar rencana, aplikasi akan menavigasi ke layar lain, yaitu 
-     PlanScreen, untuk menampilkan detail rencana yang dipilih. Di layar ini, pengguna bisa melihat informasi lebih lanjut tentang rencana yang telah dibuat.
+    PlanScreen, untuk menampilkan detail rencana yang dipilih. Di layar ini, pengguna bisa melihat informasi lebih lanjut tentang rencana yang telah dibuat.
 
 5. UI yang Interaktif dan Responsif
 Tujuan: Memberikan pengalaman pengguna yang interaktif dan responsif.
