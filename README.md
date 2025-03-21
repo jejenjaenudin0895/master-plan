@@ -2,6 +2,7 @@
 
 A new Flutter project.
 
+test
 ## Getting Started
 
 ## **Tugas Praktikum 1: Dasar State dengan Model-View**
@@ -270,5 +271,6 @@ Diagram ini menggambarkan struktur (hierarki) dari dua tampilan (screens) dalam 
 
 **Navigator Push:** Proses beralih dari PlanCreatorScreen ke PlanScreen menunjukkan bahwa setelah pengguna selesai membuat rencana, mereka akan dipindahkan ke layar yang menunjukkan rencana tersebut.
 Kesimpulan
-Diagram ini menggambarkan transisi dan struktur layar dalam aplikasi Flutter, memberikan pemahaman tentang bagaimana antarmuka pengguna dibangun serta bagaimana navigasi terjadi antara dua tampilan yang berbeda.#   m a s t e r - p l a n  
+Diagram ini menggambarkan transisi dan struktur layar dalam aplikasi Flutter, memberikan pemahaman tentang bagaimana antarmuka pengguna dibangun serta bagaimana navigasi terjadi antara dua tampilan yang berbeda.#   m a s t e r - p l a n 
+ 
  
